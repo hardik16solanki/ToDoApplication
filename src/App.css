@@ -31,3 +31,46 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  background-color: #444;
+  padding: 10px 30px 10px 0px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+.nav-links {
+  background-color: #444;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+}
+.link{
+  color: white;
+}
+.link:hover{
+  color: #337AB7;
+  text-decoration: none;
+}
+
+.icons{
+  float:right;
+  
+  margin-left:5px;
+  padding: 6px;
+}
+
+.list{
+  margin-top: 20px;
+}
+
+.updateform{
+  float:right;
+}
+
+.strike{
+  text-decoration: line-through;
+}
+
+
