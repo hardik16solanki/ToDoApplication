@@ -10,10 +10,12 @@ class Home extends Component {
         super();
         this.state = {
             todoName: "",
-            errors: {}
+            errors: {},
+            filter : "All"
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.filterList = this.filterList.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -40,6 +42,26 @@ class Home extends Component {
         this.setState({ errors: {}, todoName: "" })
         // console.log(newToDoItem);
     }
+
+    filterList(){
+        let list;
+        switch(this.state.filter){
+            case "All":
+                list = this.props.todo.todos;
+                console.log(list);
+                break;
+            case "Completed":
+                list = this.props.todo.todos.filter((item)=> item.completed===true);
+                break;
+            case "Active":
+                list = this.props.todo.todos.filter((item)=> item.completed===false);
+                break;
+            default:
+                list = this.props.todo.todos;
+        }
+        console.log(list);
+        return list;
+    }
     render() {
         const { errors } = this.state;
         return (
@@ -58,7 +80,7 @@ class Home extends Component {
                                 onChange={this.onChange}
                             />
                         </div>
-                        <input type="submit" className="btn btn-primary col-sm-1 add" value="Add" />
+                        <input type="submit" className="btn btn-primary col-sm-2 add" value="Add ToDo" />
 
                     </div>
                     {
@@ -69,9 +91,30 @@ class Home extends Component {
                         )
 
                     }
-
+                     
                 </form>
-
+                {
+                // <div style={{width: "65%",marginTop:"10px"}}>
+                //     <div className="row">
+                //         <button 
+                //             className={this.state.filter==="All"?"btn btn-primary col-md-2":"btn btn-default col-md-2"}
+                //             onClick={() => this.setState({filter:"All"})}>
+                //             All</button>
+                //         <button 
+                //             style={{marginLeft:"10px"}}
+                //             className={this.state.filter==="Completed"?"btn btn-primary col-md-2":"btn btn-default col-md-2"}
+                //             onClick={() => this.setState({filter:"Completed"})}>Completed</button>
+                //         <button 
+                //             style={{marginLeft:"10px"}}
+                //             className={this.state.filter==="Active"?"btn btn-primary col-md-2":"btn btn-default col-md-2"}
+                //             onClick={() => this.setState({filter:"Active"})}>Active</button>
+                //     </div>
+                // </div>
+                
+                }
+                {
+                    // <ToDoList list={this.filterList} />
+                }
                 <ToDoList list={this.props.todo.todos} />
 
             </div >

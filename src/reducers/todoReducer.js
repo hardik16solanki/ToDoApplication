@@ -1,4 +1,4 @@
-import { GET_TODOS } from '../actions/types';
+import { GET_TODOS,DELETE_TODO } from '../actions/types';
 
 const initialState = {
     todos: [],
@@ -11,6 +11,11 @@ export default function (state = initialState, actions) {
             return {
                 ...state,
                 todos: actions.payload
+            };
+        case DELETE_TODO:
+            return{
+                ...state,
+                // todos:actions.payload
             };
         default:
             return state;

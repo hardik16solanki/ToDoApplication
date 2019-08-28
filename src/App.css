@@ -49,7 +49,11 @@
 .link{
   color: white;
 }
-.link:hover{
+.link:hover {
+  color: #337AB7;
+  text-decoration: none;
+}
+.link:visited{
   color: #337AB7;
   text-decoration: none;
 }
@@ -73,4 +77,10 @@
   text-decoration: line-through;
 }
 
+.button{
+  margin-left:5px;
+}
 
+.itemName{
+  margin-left: 20px;
+}
