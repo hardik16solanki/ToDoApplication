@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createToDo, getToDos } from '../actions/todoActions';
 import classnames from 'classnames';
 import ToDoList from './ToDo/ToDoList';
-
+import Header from './Layout/Header';
 class Home extends Component {
     constructor() {
         super();
@@ -66,7 +66,7 @@ class Home extends Component {
         const { errors } = this.state;
         return (
             <div>
-
+                <Header />
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group row" style={{ marginBottom: "0px" }}>
                         <div className="col-sm-10">
